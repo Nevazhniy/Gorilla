@@ -12,7 +12,8 @@ url = f'https://api.vk.com/method/messages.send?user_id=-171493284&message=аз�
 while True:
     request = requests.get(url=url)
     if 'response' in request.text:
-        print('newMessage')
+        count = count + 1
+        print(f'Bet №{count}')
     elif 'captcha needed' in request.text:
         print('captcha')
         time.sleep(10)
